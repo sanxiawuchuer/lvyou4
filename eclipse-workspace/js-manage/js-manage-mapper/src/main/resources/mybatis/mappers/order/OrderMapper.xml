@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.js.manage.mapper.order.OrderMapper">
+   <resultMap type="Order" id="orderRM">
+   <id property="orderNo" column="order_no"/>
+   <!-- 一对一 -->
+   <association property="orderServer" javaType="OrderServer" select="queryOrderServerByOrderNo" autoMapping="true" column="order_no"></association>
+   </resultMap>
+   <select id="queryListBStatus" parameterType="string" resultMap="orderRM">
+    select * from ly_order where order_status=#{orderStatus}
+   </select>
+   <select id="queryOrderServerByOrderNo" parameterType="string" resultType="OrderServer">
+  select travel_start_time,travel_end_time,adult_num,children_num from ly_order_server where order_no=#{orderNo}
+   </select>
+</mapper>  

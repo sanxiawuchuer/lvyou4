@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.js.manage</groupId>
+  <artifactId>js-manage</artifactId>
+  <packaging>pom</packaging>
+
+  <name>js-manage</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+  	<module>js-manage-pojo</module>
+  	<module>js-manage-mapper</module>
+  	<module>js-manage-service</module>
+    <module>js-manage-web</module>
+    <module>js-manage-api</module>
+  </modules>
+  <parent>
+  	<groupId>com.js.parent</groupId>
+  	<artifactId>js-parent</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.js.common</groupId>
+  		<artifactId>js-common</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+</project>
